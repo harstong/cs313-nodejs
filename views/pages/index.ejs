@@ -3,14 +3,19 @@
 <head>
   <title>Home Page</title>
   <% include ../partials/header.ejs %>
-  
-
 </head>
 
 <body>
   <h1>Test HTML Page with EJS extension</h1>
-  <form>
-   
+  <form action="getRate.ejs" method="get">
+    Weight of Item: <input type="number" name="weight"><br>
+    Type of Mail: <select>
+      <option value="Stamped">Letters(Stamped)</option>
+      <option value="Metered">Letters(Metered)</option> 
+      <option value="Flats">Large Envelopes(Flats)</option>
+      <option value="First-Class">First-Class Package Service-Retail</option>
+    </select>
+    <input type="submit" value="Submit"
   </form>
 
 </body>

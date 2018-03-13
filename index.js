@@ -10,7 +10,7 @@ express()
   .get('/', (req, res) => res.render('pages/index'))
   .get('/cool', (req, res) => res.send(cool()))
   .get('/getRate/:weight', function(req, res){
-    res.send('Weight: ' + req.params.weight)  
+    res.render('pages/getRate/:weight', {weight: req.params.weight}) 
   })
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

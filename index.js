@@ -9,5 +9,13 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .get('/cool', (req, res) => res.send(cool()))
-  .get('/getRate', (req, res) => res.render('pages/getRate.ejs'))
+  .get('/getRate/:weight/:mailType', function(req, res, next){
+    console.log(req.params)  
+  })
+  .post('/getRate/:weight', function(req, res, next) {
+    var weight = req.body.weight
+    res.redirect('/getRate/' + weight)
+    
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+  
